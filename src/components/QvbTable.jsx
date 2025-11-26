@@ -32,6 +32,7 @@ export default function QvbTable({ rows, columns, updateCell, deleteRow, handleW
               type="primary"
               icon={<DeleteOutlined />}
               onClick={() => deleteRow(index)}
+              
             >
               Delete
             </Button>
