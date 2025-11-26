@@ -3,8 +3,9 @@ import { Table, Card, Input, Button } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import { useWindowSize } from "../hooks/useWindowSize";
 
-export default function QvbTable({ rows, columns, updateCell, deleteRow }) {
+export default function QvbTable({ rows, columns, updateCell, deleteRow, handleWordChange }) {
   const width = useWindowSize();
+
   if (width < 768) {
     return (
       <div className={styles.mobileWrapper}>
@@ -14,7 +15,7 @@ export default function QvbTable({ rows, columns, updateCell, deleteRow }) {
               <label>Word</label>
               <Input
                 value={row.col1}
-                onChange={(e) => updateCell(index, "col1", e.target.value)}
+                onChange={(e) => handleWordChange(index, e.target.value)}
               />
             </div>
 
@@ -39,6 +40,7 @@ export default function QvbTable({ rows, columns, updateCell, deleteRow }) {
       </div>
     );
   }
+
 
   return (
     <Card className={styles.tableWrapper}>

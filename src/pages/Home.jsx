@@ -10,7 +10,6 @@ import { Input, Button } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import Navbar from "../components/Navbar";
 
-
 const languages = [
   { label: "English", value: "en" },
   // { label: "Azerbaijani", value: "az" },
@@ -98,7 +97,7 @@ function Home() {
 
   return (
     <div style={{ padding: 40, maxWidth: 900, margin: "auto" }}>
-    <Navbar />
+      <Navbar />
       <QvbHeader
         lessonName={lessonName}
         setLessonName={setLessonName}
@@ -111,7 +110,13 @@ function Home() {
         languages={languages}
       />
 
-      <QvbTable rows={rows} columns={columns} />
+      <QvbTable
+        rows={rows}
+        columns={columns}
+        updateCell={updateCell}
+        deleteRow={deleteRow}
+         handleWordChange={handleWordChange}
+      />
 
       <QvbBottomButtons
         rows={rows}
