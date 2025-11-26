@@ -1,0 +1,32 @@
+.tableWrapper {
+  padding: 20px;
+}
+
+.mobileWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobileCard {
+  padding: 15px !important;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.mobileField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  input {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+}

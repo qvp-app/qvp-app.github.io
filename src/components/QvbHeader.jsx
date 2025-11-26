@@ -1,3 +1,4 @@
+import styles from "./QvbHeader.module.scss";
 import { Input, DatePicker, Space, Select, Card, Typography } from "antd";
 
 const { Title } = Typography;
@@ -14,36 +15,37 @@ const QvbHeader = ({
   languages,
 }) => {
   return (
-    <Card style={{ marginBottom: 20, padding: 20 }}>
+    <Card className={styles.headerWrapper}>
       <Title level={3}>QVB – Quick Vocabulary Builder</Title>
 
       <Space direction="vertical" size="large" style={{ width: "100%", marginTop: 20 }}>
         <Input
+          className={styles.input}
           placeholder="Lesson Name"
           value={lessonName}
           onChange={(e) => setLessonName(e.target.value)}
         />
 
         <DatePicker
-          style={{ width: "100%" }}
+          className={styles.input}
           value={date}
           onChange={(value) => setDate(value)}
         />
 
-        <Space size="large" style={{ width: "100%", justifyContent: "space-between" }}>
+        <div className={styles.langSelects}>
           <Select
-            style={{ width: "100%" }}
+            className={styles.input}
             value={fromLang}
             options={languages}
             onChange={setFromLang}
           />
           <Select
-            style={{ width: "100%" }}
+            className={styles.input}
             value={toLang}
             options={languages}
             onChange={setToLang}
           />
-        </Space>
+        </div>
       </Space>
     </Card>
   );

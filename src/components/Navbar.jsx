@@ -1,3 +1,4 @@
+import styles from "./Navbar.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "antd";
 
@@ -17,6 +18,7 @@ export default function Navbar() {
 
   return (
     <Menu
+      className={styles.navbar}
       mode="horizontal"
       selectedKeys={[location.pathname]}
       items={items}
