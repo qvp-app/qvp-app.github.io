@@ -28,6 +28,7 @@ export default function Blog() {
             height: 600,
             background: "#f1f1f1",
             borderRadius: 6,
+            
           }}
         >
           Advertisement
