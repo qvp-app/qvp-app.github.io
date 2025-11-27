@@ -9,6 +9,7 @@ import { exportDocx } from "../utils/generateDocx";
 import { Input, Button } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import Navbar from "../components/Navbar";
+import styles from "./Home.module.scss";
 
 const languages = [
   { label: "English", value: "en" },
@@ -102,34 +103,17 @@ function Home() {
         justifyContent: "center",
         gap: 20,
         padding: "20px 10px",
+        // overflow: "hidden",
+        paddingTop: 70,
       }}
     >
       {/* LEFT SIDEBAR (Desktop only) */}
-      <div
-        style={{
-          width: 160,
-          display: window.innerWidth > 1024 ? "block" : "none",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: 600,
-            background: "#f1f1f1",
-            borderRadius: 6,
-          }}
-        >
-          Advertisement
-        </div>
+      <div className={styles["sidebar-left"]}>
+        <div className={styles["ad-box"]}>Advertisement</div>
       </div>
 
       {/* MAIN CONTENT */}
-      <div
-        style={{
-          maxWidth: 900,
-          width: "100%",
-        }}
-      >
+      <div className={styles["main-content"]}>
         <Navbar />
         <QvbHeader
           lessonName={lessonName}
@@ -162,22 +146,8 @@ function Home() {
       </div>
 
       {/* RIGHT SIDEBAR (Desktop only) */}
-      <div
-        style={{
-          width: 160,
-          display: window.innerWidth > 1024 ? "block" : "none",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: 600,
-            background: "#f1f1f1",
-            borderRadius: 6,
-          }}
-        >
-          Advertisement
-        </div>
+      <div className={styles["sidebar-right"]}>
+        <div className={styles["ad-box"]}>Advertisement</div>
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
+import { useState } from "react";
 import styles from "./Navbar.module.scss";
 import { Link, useLocation } from "react-router-dom";
-import { Menu } from "antd";
+import { Menu, Drawer, Button } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 
 export default function Navbar() {
   const location = useLocation();
+  const [open, setOpen] = useState(false);
 
   const items = [
     {
@@ -17,17 +20,37 @@ export default function Navbar() {
   ];
 
   return (
-    <Menu
-      className={styles.navbar}
-      mode="horizontal"
-      selectedKeys={[location.pathname]}
-      items={items}
-      style={{
-        marginBottom: 20,
-        fontSize: 16,
-        padding: "10px 30px",
-        borderRadius: 8,
-      }}
-    />
+    <div className={styles.navbarWrapper}>
+      {/* Desktop Menu */}
+      <Menu
+        className={styles.navbar}
+        mode="horizontal"
+        selectedKeys={[location.pathname]}
+        items={items}
+      />
+
+      {/* Mobile burger button */}
+      <Button
+        className={styles.burger}
+        type="text"
+        icon={<MenuOutlined />}
+        onClick={() => setOpen(true)}
+      />
+
+      {/* Drawer Menu — mobile */}
+      <Drawer
+        title="Menu"
+        placement="right"
+        onClose={() => setOpen(false)}
+        open={open}
+      >
+        <Menu
+          mode="vertical"
+          selectedKeys={[location.pathname]}
+          items={items}
+          onClick={() => setOpen(false)}
+        />
+      </Drawer>
+    </div>
   );
 }

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { posts } from "../blog/data/posts";
 import { Typography } from "antd";
 import Navbar from "../components/Navbar";
+import styles from "./BlogPost.module.scss";
 
 const { Title } = Typography;
 
@@ -21,26 +22,12 @@ export default function BlogPost() {
       }}
     >
       {/* LEFT SIDEBAR */}
-      <div
-        style={{
-          width: 160,
-          display: window.innerWidth > 1024 ? "block" : "none",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: "100vh",
-            background: "#f1f1f1",
-            borderRadius: 6,
-          }}
-        >
-          Advertisement
-        </div>
+      <div className={styles["sidebar-left"]}>
+        <div className={styles["ad-box"]}>Advertisement</div>
       </div>
 
       {/* MAIN CONTENT */}
-      <div style={{ maxWidth: 900, width: "100%" }}>
+      <div style={{ maxWidth: 900, width: "100%" }}  className={styles["main-content"]}>
         <Navbar />
 
         <Title level={2}>{post.title}</Title>
@@ -86,22 +73,8 @@ export default function BlogPost() {
       </div>
 
       {/* RIGHT SIDEBAR */}
-      <div
-        style={{
-          width: 160,
-          display: window.innerWidth > 1024 ? "block" : "none",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: "100vh",
-            background: "#f1f1f1",
-            borderRadius: 6,
-          }}
-        >
-          Advertisement
-        </div>
+      <div className={styles["sidebar-right"]}>
+        <div className={styles["ad-box"]}>Advertisement</div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { Card, Typography } from "antd";
 import { Link } from "react-router-dom";
 import { posts } from "../blog/data/posts";
 import Navbar from "../components/Navbar";
+import styles from "./Blog.module.scss";
 
 const { Title } = Typography;
 
@@ -13,30 +14,26 @@ export default function Blog() {
         justifyContent: "center",
         gap: 20,
         padding: "20px 10px",
+        // overflow: "hidden",
+        paddingTop: 70,
       }}
     >
       {/* LEFT SIDEBAR */}
-      <div
-        style={{
-          width: 160,
-          display: window.innerWidth > 1024 ? "block" : "none",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: 600,
-            background: "#f1f1f1",
-            borderRadius: 6,
-            
-          }}
-        >
-          Advertisement
-        </div>
+      <div className={styles["sidebar-left"]}>
+        <div className={styles["ad-box"]}>Advertisement</div>
       </div>
 
       {/* MAIN BLOG CONTENT */}
-      <div style={{ maxWidth: 900, width: "100%" }}>
+      <div
+        style={{
+          maxWidth: 900,
+          width: "100%",
+          height: "100%",
+          overflowY: "auto",
+          paddingRight: 10,
+          paddingTop: 10,
+        }}
+      >
         <Navbar />
         <Title level={2}>Blog</Title>
 
@@ -67,22 +64,8 @@ export default function Blog() {
       </div>
 
       {/* RIGHT SIDEBAR */}
-      <div
-        style={{
-          width: 160,
-          display: window.innerWidth > 1024 ? "block" : "none",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: 600,
-            background: "#f1f1f1",
-            borderRadius: 6,
-          }}
-        >
-          Advertisement
-        </div>
+      <div className={styles["sidebar-right"]}>
+        <div className={styles["ad-box"]}>Advertisement</div>
       </div>
     </div>
   );
