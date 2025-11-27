@@ -97,16 +97,7 @@ function Home() {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        gap: 20,
-        padding: "20px 10px",
-        // overflow: "hidden",
-        paddingTop: 70,
-      }}
-    >
+    <div className={styles["page-wrapper"]}>
       {/* LEFT SIDEBAR (Desktop only) */}
       <div className={styles["sidebar-left"]}>
         <div className={styles["ad-box"]}>Advertisement</div>
