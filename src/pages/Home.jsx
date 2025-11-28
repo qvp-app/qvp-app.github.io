@@ -36,6 +36,7 @@ function Home() {
     const updated = [...rows];
     updated[index][field] = value;
     setRows(updated);
+    
   };
 
   const deleteRow = (index) => {
