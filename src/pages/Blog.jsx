@@ -17,6 +17,8 @@ export default function Blog() {
         // overflow: "hidden",
         paddingTop: 70,
       }}
+
+      
     >
       {/* LEFT SIDEBAR */}
       <div className={styles["sidebar-left"]}>
