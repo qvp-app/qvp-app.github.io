@@ -64,7 +64,7 @@ export default function Navbar() {
         onClick={() => setOpenModal(true)}
       />
 
-      <AboutModal open={openModal} onClose={() => setOpenAbout(false)} />
+      <AboutModal open={openModal} onClose={() => setOpenModal(false)} />
     </div>
   );
 }
