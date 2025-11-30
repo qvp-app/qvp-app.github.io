@@ -2,6 +2,7 @@ import { useState } from "react";
 import dayjs from "dayjs";
 
 import QvbHeader from "../components/QvbHeader";
+import QvbInputArea from "../components/QvbInputArea";
 import QvbTable from "../components/QvbTable";
 import QvbBottomButtons from "../components/QvbBottomButtons";
 import { translateWord } from "../utils/translate";
@@ -36,7 +37,6 @@ function Home() {
     const updated = [...rows];
     updated[index][field] = value;
     setRows(updated);
-    
   };
 
   const deleteRow = (index) => {
@@ -117,6 +117,11 @@ function Home() {
           toLang={toLang}
           setToLang={setToLang}
           languages={languages}
+        />
+
+        <QvbInputArea
+          translateWord={(word) => translateWord(word, fromLang, toLang)}
+          onAddWord={(newRow) => setRows((prev) => [...prev, newRow])}
         />
 
         <QvbTable

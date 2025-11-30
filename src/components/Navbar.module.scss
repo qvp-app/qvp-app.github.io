@@ -1,6 +1,6 @@
-/* Wrapper — həm Menu, həm Burger üçün */
 .navbarWrapper {
   position: fixed;
+  box-sizing: border-box;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,6 +10,8 @@
   display: flex;
   align-items: center;
   padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar {
