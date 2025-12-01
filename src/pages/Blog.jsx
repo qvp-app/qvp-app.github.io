@@ -69,6 +69,7 @@ export default function Blog() {
       <div className={styles["sidebar-right"]}>
         <div className={styles["ad-box"]}>Advertisement</div>
       </div>
+      
     </div>
   );
 }
